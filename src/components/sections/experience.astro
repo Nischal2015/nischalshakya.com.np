@@ -1,0 +1,52 @@
+---
+import Section from "../../layouts/section.astro";
+import List from '../molecules/list.astro';
+import Button from '../atoms/button.astro';
+import { getAllRoles } from '../../services/roles';
+
+interface Experience {
+  title: string;
+  metadata: {
+    company: string;
+    description: string;
+  }
+}
+const roles:Experience[] = await getAllRoles('job-roles', 'title,metadata', 3);
+const colors = ['text-source-green', 'text-source-secondary', 'text-source-tertiary'];
+---
+
+<Section bg={'bg-ref-secondary-99'}>
+  <span class="text-title-medium uppercase opacity-75 inline-block">Work Experience</span>
+  <h2 class="h2">
+    Different Role involvements
+    <br />
+    in the past
+  </h2>
+  <div class="grid grid-cols-responsive-grid gap-x-[10.66rem]">
+    {
+      roles.map(({title, metadata: {company, description}}, index) => (
+        <List
+          number={`0${index + 1}`}
+          color={colors[index]!}
+          company={company}
+          role={title}
+        >
+          {description}
+        </List>
+      ))
+    }
+  </div>
+    <Button icon="right-arrow" class="mx-auto">View all Roles</Button>
+</Section>
+
+<style>
+  span {
+    margin-block-end: 1.2rem;
+  }
+  .h2 {
+    margin-block-end: 6.4rem;
+  }
+  .grid {
+    margin-block-end: 9.6rem;
+  }
+</style>

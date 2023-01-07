@@ -1,0 +1,25 @@
+---
+interface Props {
+  py?: number
+  bg: string
+}
+
+const { py, bg } = Astro.props as Props;
+const paddingBlock = py ? `${py}rem`: '9.6rem';
+---
+
+<section class={`${bg} section`}>
+  <div class="container m-auto">
+    <slot />
+  </div>
+</section>
+
+<style define:vars={{ paddingBlock }}>
+  .container {
+    padding-inline: 5.33rem;
+  }
+  .section {
+    padding-block: var(--paddingBlock);
+  }
+  
+</style>

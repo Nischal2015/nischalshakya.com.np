@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./src/**/*.{astro}'],
+  content: ['./src/**/*.astro'],
   theme: {
     colors: {
       white: '#f8f9fa',
@@ -310,15 +310,15 @@ module.exports = {
         {
           lineHeight: '1.2',
           letterSpacing: '',
-          fontWeight: '',
+          fontWeight: '500',
         },
       ],
       'title-large': [
         '2.4rem',
         {
           lineHeight: '1.2',
-          letterSpacing: '',
-          fontWeight: '',
+          letterSpacing: '0',
+          fontWeight: '400',
         },
       ],
     },
@@ -330,7 +330,13 @@ module.exports = {
       5: '9.6rem',
       6: '12.8rem',
     },
-    fontFamily: { inter: ['Inter', 'sans-serif'] },
+    fontFamily: {
+      inter: ['Inter', 'sans-serif'],
+      montserrat: ['Montserrat', 'sans-serif'],
+    },
+    gridTemplateColumns: {
+      'responsive-grid': 'repeat(auto-fit, minmax(300px, 1fr))',
+    },
   },
   plugins: [],
 };
