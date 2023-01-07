@@ -6,7 +6,7 @@ const bucket = api.bucket({
   read_key: import.meta.env.PUBLIC_COSMIC_READ_KEY,
 });
 
-export async function getData(type: string, props: string) {
+export async function getData(type: string, props: string, limit: number) {
   /**
    * ```
    * getData('job-roles', 'title,metadata')
@@ -15,7 +15,7 @@ export async function getData(type: string, props: string) {
    * @param type - The type of object to return
    * @param props - The properties to return for each object
    */
-  const data = await bucket.objects.find({ type }).props(props);
+  const data = await bucket.objects.find({ type }).props(props).limit(limit);
 
   return data.objects;
 }
