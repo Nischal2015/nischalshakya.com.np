@@ -1,0 +1,33 @@
+---
+interface Props {
+  icon?: string
+  class?: string
+}
+
+const { icon, class: className } = Astro.props as Props;
+import { Icon } from 'astro-icon';
+---
+
+<button class:list={[`h-[8rem] bg-source-primary border-0 text-headline-medium rounded-[48px] py-lg ${className}`, { 'pd-sm': icon }]}>
+  <slot />
+  {
+    icon != undefined && <span class="h-2 w-2">
+      <Icon name={icon} />
+    </span>
+  }
+</button>
+
+<style>
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.6rem;
+  }
+  .py-lg {
+    padding-inline: 4.8rem;
+  }
+  .pd-sm {
+    padding-inline: 3.2rem;
+  }
+</style>
