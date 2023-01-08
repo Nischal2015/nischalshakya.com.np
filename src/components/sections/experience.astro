@@ -2,7 +2,8 @@
 import Section from "../../layouts/section.astro";
 import List from '../molecules/list.astro';
 import Button from '../atoms/button.astro';
-import { getAllRoles } from '../../services/roles';
+import SectionName from '../atoms/section-name.astro';
+import { getAllData as getAllRoles } from '../../services/data';
 
 interface Experience {
   title: string;
@@ -15,8 +16,8 @@ const roles:Experience[] = await getAllRoles('job-roles', 'title,metadata', 3);
 const colors = ['text-source-green', 'text-source-secondary', 'text-source-tertiary'];
 ---
 
-<Section bg={'bg-ref-secondary-99'}>
-  <span class="text-title-medium uppercase opacity-75 inline-block">Work Experience</span>
+<Section bg={'bg-ref-secondary-98'}>
+  <SectionName>Work Experience</SectionName>
   <h2 class="h2">
     Different Role involvements
     <br />
@@ -40,9 +41,6 @@ const colors = ['text-source-green', 'text-source-secondary', 'text-source-terti
 </Section>
 
 <style>
-  span {
-    margin-block-end: 1.2rem;
-  }
   .h2 {
     margin-block-end: 6.4rem;
   }
