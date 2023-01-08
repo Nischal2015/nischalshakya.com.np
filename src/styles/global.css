@@ -1,19 +1,26 @@
-@tailwind base;
-
-@layer base {
-  html {
-    font-size: 62.5%;
-  }
-  body {
-    @apply font-inter leading-none text-black;
-  }
-  h1 {
-    @apply text-display-large;
-  }
-  h2 {
-    @apply text-display-medium;
-  }
-  h3 {
-    @apply text-display-small;
-  }
+html {
+  font-size: 62.5%;
+}
+body {
+  @apply font-inter leading-none text-black;
+}
+h1 {
+  @apply text-display-large;
+}
+h2 {
+  @apply text-display-medium;
+}
+h3 {
+  @apply text-display-small;
+}
+img,
+video,
+iframe {
+  max-inline-size: 100%;
+  block-size: auto;
+  object-fit: cover;
+  object-position: top center;
+}
+img {
+  aspect-ratio: 3/2;
 }

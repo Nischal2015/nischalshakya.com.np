@@ -334,8 +334,10 @@ module.exports = {
       inter: ['Inter', 'sans-serif'],
       montserrat: ['Montserrat', 'sans-serif'],
     },
-    gridTemplateColumns: {
-      'responsive-grid': 'repeat(auto-fit, minmax(300px, 1fr))',
+    extend: {
+      gridTemplateColumns: {
+        'responsive-grid': 'repeat(auto-fit, minmax(300px, 1fr))',
+      },
     },
   },
   plugins: [],
