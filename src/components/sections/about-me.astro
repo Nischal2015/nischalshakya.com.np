@@ -1,0 +1,65 @@
+---
+import Section from '../../layouts/section.astro';
+import Button from '../atoms/button.astro';
+import ExpandButton from '../atoms/expand-button.astro';
+import SectionName from '../atoms/section-name.astro';
+---
+
+<Section bg='bg-ref-tertiary-99'>
+  <SectionName>My Projects</SectionName>
+  <div class='grid grid-cols-responsive-grid gap-x-[20.66rem] gap-y-[10.33rem]'>
+    <div>
+      <h2 class='h2'>
+        Perform work,
+        <br />
+        that provides value
+        <br />
+        to others
+      </h2>
+
+      <p class='text-body-large about'>
+        I enjoy designing meaningful experiences for brands & businesses to help
+        them serve their target users.
+      </p>
+
+      <Button icon='right-arrow' iconSize={'h-2 w-2'}>About Me</Button>
+    </div>
+    <div class='flex flex-col gap-1'>
+      <ExpandButton
+        numbering={1}
+        backgroundColor={'bg-ref-secondary-90'}
+        iconBgColor={'fill-ref-secondary-95'}
+        iconSize='h-[3.6rem] w-[3.6rem]'
+      >
+        Learn
+      </ExpandButton>
+      <ExpandButton
+        numbering={2}
+        backgroundColor={'bg-ref-green-95'}
+        iconBgColor={'fill-ref-green-98'}
+        iconSize='h-[3.6rem] w-[3.6rem]'
+      >
+        Perform
+      </ExpandButton>
+      <ExpandButton
+        numbering={3}
+        backgroundColor={'bg-ref-tertiary-90'}
+        iconBgColor={'fill-ref-tertiary-95'}
+        iconSize='h-[3.6rem] w-[3.6rem]'
+      >
+        Become Better
+      </ExpandButton>
+    </div>
+  </div>
+</Section>
+
+<style>
+  .h2 {
+    margin-block-end: 4.8rem;
+  }
+  .about {
+    margin-block-end: 9.6rem;
+    max-inline-size: 56ch;
+    font-size: 20px;
+  }
+</style>

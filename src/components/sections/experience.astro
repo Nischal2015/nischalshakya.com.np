@@ -1,5 +1,5 @@
 ---
-import Section from "../../layouts/section.astro";
+import Section from '../../layouts/section.astro';
 import List from '../molecules/list.astro';
 import Button from '../atoms/button.astro';
 import SectionName from '../atoms/section-name.astro';
@@ -10,22 +10,26 @@ interface Experience {
   metadata: {
     company: string;
     description: string;
-  }
+  };
 }
-const roles:Experience[] = await getAllRoles('job-roles', 'title,metadata', 3);
-const colors = ['text-source-green', 'text-source-secondary', 'text-source-tertiary'];
+const roles: Experience[] = await getAllRoles('job-roles', 'title,metadata', 3);
+const colors = [
+  'text-source-green',
+  'text-source-secondary',
+  'text-source-tertiary',
+];
 ---
 
-<Section bg={'bg-ref-secondary-98'}>
+<Section bg={'bg-ref-secondary-99'}>
   <SectionName>Work Experience</SectionName>
-  <h2 class="h2">
+  <h2 class='h2'>
     Different Role involvements
     <br />
     in the past
   </h2>
-  <div class="grid grid-cols-responsive-grid gap-x-[10.66rem]">
+  <div class='grid grid-cols-responsive-grid gap-x-[10.66rem] gap-y-4'>
     {
-      roles.map(({title, metadata: {company, description}}, index) => (
+      roles.map(({ title, metadata: { company, description } }, index) => (
         <List
           number={`0${index + 1}`}
           color={colors[index]!}
@@ -37,7 +41,9 @@ const colors = ['text-source-green', 'text-source-secondary', 'text-source-terti
       ))
     }
   </div>
-    <Button icon="right-arrow" class="mx-auto">View all Roles</Button>
+  <Button icon='right-arrow' class='mx-auto' iconSize={'h-2 w-2'}>
+    View all Roles
+  </Button>
 </Section>
 
 <style>

@@ -1,5 +1,5 @@
 ---
-import { Picture } from "astro-imagetools/components";
+import { Picture } from 'astro-imagetools/components';
 
 interface Props {
   image: string;
@@ -8,15 +8,15 @@ interface Props {
   altText: string;
 }
 
-const {image, summary, title, altText} = Astro.props as Props;
+const { image, summary, title, altText } = Astro.props as Props;
 ---
 
-<div class="project">
-  <div class="rounded-[2.4rem] image-container overflow-hidden">
+<div class='project'>
+  <div class='rounded-[2.4rem] image-container overflow-hidden'>
     <Picture src={image} alt={altText} />
   </div>
-  <h3 class="text-title-large h3">{title}</h3>
-  <p class="text-body-large">{summary}</p>
+  <h3 class='text-title-large h3'>{title}</h3>
+  <p class='text-body-large'>{summary}</p>
 </div>
 
 <style>
