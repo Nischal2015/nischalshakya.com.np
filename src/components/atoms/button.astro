@@ -1,19 +1,40 @@
 ---
-interface Props {
-  icon?: string
-  class?: string
+import { Icon } from 'astro-icon';
+interface CommonProps {
+  class?: string;
+  backgroundColor?: string;
+  fontSize?: string;
 }
 
-const { icon, class: className } = Astro.props as Props;
-import { Icon } from 'astro-icon';
+type ConditionalProps =
+  | { icon?: string; iconBgColor?: string; iconSize: string }
+  | { icon?: undefined; iconBgColor?: undefined; iconSize: undefined };
+
+type Props = CommonProps & ConditionalProps;
+
+const {
+  icon,
+  class: className,
+  backgroundColor = 'bg-source-primary',
+  fontSize = 'text-headline-medium',
+  iconBgColor,
+  iconSize,
+} = Astro.props as Props;
 ---
 
-<button class:list={[`h-[8rem] bg-source-primary border-0 text-headline-medium rounded-[48px] py-lg ${className}`, { 'pd-sm': icon }]}>
+<button
+  class:list={[
+    `h-[8rem] ${backgroundColor} ${fontSize} border-0  rounded-[48px] py-lg ${className}`,
+    { 'pd-sm': icon },
+  ]}
+>
   <slot />
   {
-    icon != undefined && <span class="h-2 w-2">
-      <Icon name={icon} />
-    </span>
+    icon !== undefined && (
+      <span class={iconSize}>
+        <Icon name={icon} class={iconBgColor} />
+      </span>
+    )
   }
 </button>
 
@@ -21,7 +42,7 @@ import { Icon } from 'astro-icon';
   button {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     gap: 1.6rem;
   }
   .py-lg {
