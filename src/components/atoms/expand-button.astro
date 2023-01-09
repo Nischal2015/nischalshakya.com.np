@@ -1,0 +1,44 @@
+---
+import Button from './button.astro';
+
+interface Props {
+  numbering?: number;
+  backgroundColor:
+    | 'bg-ref-tertiary-90'
+    | 'bg-ref-secondary-90'
+    | 'bg-ref-green-95';
+  iconBgColor:
+    | 'fill-ref-secondary-95'
+    | 'fill-ref-tertiary-95'
+    | 'fill-ref-green-98';
+  iconSize: string;
+}
+
+const { numbering, backgroundColor, iconBgColor, iconSize } =
+  Astro.props as Props;
+
+const number = `0${numbering}/`;
+---
+
+<Button
+  backgroundColor={backgroundColor}
+  icon='plus-with-bg'
+  iconBgColor={iconBgColor}
+  class='w-full'
+  iconSize={iconSize}
+>
+  <span>
+    {
+      numbering && (
+        <span class='numbering text-title-medium opacity-80'>{number}</span>
+      )
+    }
+    <slot />
+  </span>
+</Button>
+
+<style>
+  .numbering {
+    margin-inline-end: 2.4rem;
+  }
+</style>
