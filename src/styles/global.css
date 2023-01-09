@@ -1,5 +1,5 @@
 html {
-  font-size: 62.5%;
+  @apply xl:text-[62.5%] lg:text-[56.25%] text-[50%];
 }
 body {
   @apply font-inter leading-none text-black;
@@ -22,5 +22,5 @@ iframe {
   object-position: top center;
 }
 img {
-  aspect-ratio: 3/2;
+  aspect-ratio: 4/3;
 }
