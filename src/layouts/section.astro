@@ -2,13 +2,14 @@
 interface Props {
   py?: number;
   bg: string;
+  class?: string;
 }
 
-const { py, bg } = Astro.props as Props;
+const { py, bg, class: className } = Astro.props as Props;
 const paddingBlock = py ? `${py}rem` : '9.6rem';
 ---
 
-<section class={`${bg} section`}>
+<section class={`${bg} section ${className}`}>
   <div class='container m-auto'>
     <slot />
   </div>
