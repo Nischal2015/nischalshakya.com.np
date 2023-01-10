@@ -1,0 +1,51 @@
+---
+import Section from '../../layouts/section.astro';
+import SocialLink from '../atoms/social-link.astro';
+---
+
+<footer>
+  <Section py={12.8} bg='bg-white' class='text-center'>
+    <p class='text-display-medium p font-montserrat'>Want to know me more?</p>
+    <div class='text-[4.8rem] font-light connect'>Let's connect</div>
+    <div class='inline-flex gap-4 items-center social-collection'>
+      <SocialLink
+        href='https://www.github.com/Nischal2015'
+        icon='github'
+        ariaLabel="Nischal's GIthub Profile"
+      />
+      <SocialLink
+        href='https://www.linkedin.com/in/nischal-shakya-192749181/'
+        icon='linkedin'
+        ariaLabel="Nischal's LinkedIn Profile"
+      />
+      <SocialLink
+        href='https://www.instagram.com/nischal_shakya_/'
+        icon='instagram'
+        ariaLabel="Nischal's Instagram Profile"
+      />
+      <SocialLink
+        href='https://www.facebook.com/nischal.shakya.2015/'
+        icon='facebook'
+        ariaLabel="Nischal's Facebook Profile"
+      />
+    </div>
+    <div>
+      <span class='text-body-large'>
+        React out for collaboration <br /> at
+      </span>
+      <h3 class='text-body-large'>nischalshakya2015@gmail.com</h3>
+    </div>
+  </Section>
+</footer>
+
+<style>
+  .p {
+    margin-block-end: 6.4rem;
+  }
+  .connect {
+    margin-block-end: 2.4rem;
+  }
+  .social-collection {
+    margin-block-end: 12.8rem;
+  }
+</style>
