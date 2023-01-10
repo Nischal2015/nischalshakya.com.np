@@ -1,0 +1,22 @@
+---
+import { Icon } from 'astro-icon';
+
+interface Props {
+  href: string;
+  icon: string;
+  ariaLabel: string;
+}
+
+const { href, icon, ariaLabel } = Astro.props as Props;
+---
+
+<span class='h-[3.2rem] w-[3.2rem]'>
+  <a
+    href={href}
+    aria-label={ariaLabel}
+    target='_blank'
+    rel='noreferrer noopner'
+  >
+    <Icon name={icon} />
+  </a>
+</span>
