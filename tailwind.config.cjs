@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     colors: {
       white: '#f8f9fa',
-      black: '#343a40',
+      black: '#212529',
       source: {
         primary: '#ffc078',
         secondary: '#74c0fc',
@@ -218,11 +218,11 @@ module.exports = {
         },
       ],
       'body-large': [
-        '1.6rem',
+        '2.25rem',
         {
           lineHeight: '1.5',
-          letterSpacing: '',
-          fontWeight: '',
+          letterSpacing: '0.5px',
+          fontWeight: '400',
         },
       ],
       'label-small': [
@@ -286,7 +286,7 @@ module.exports = {
         {
           lineHeight: '1.2',
           letterSpacing: '-0.5px',
-          fontWeight: '400',
+          fontWeight: '500',
         },
       ],
       'display-large': [
@@ -314,7 +314,7 @@ module.exports = {
         },
       ],
       'title-large': [
-        '2.4rem',
+        '3rem',
         {
           lineHeight: '1.2',
           letterSpacing: '0',
@@ -331,7 +331,7 @@ module.exports = {
       6: '12.8rem',
     },
     fontFamily: {
-      inter: ['Inter', 'sans-serif'],
+      opensans: ['Open Sans', 'sans-serif'],
       montserrat: ['Montserrat', 'sans-serif'],
     },
     extend: {

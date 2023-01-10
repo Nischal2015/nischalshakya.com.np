@@ -2,13 +2,13 @@ html {
   @apply xl:text-[62.5%] lg:text-[56.25%] text-[50%];
 }
 body {
-  @apply font-inter leading-none text-black;
+  @apply font-opensans leading-none;
 }
 h1 {
-  @apply text-display-large;
+  @apply font-montserrat text-display-large;
 }
 h2 {
-  @apply text-display-medium;
+  @apply font-montserrat text-display-medium;
 }
 h3 {
   @apply text-display-small;
@@ -23,4 +23,20 @@ iframe {
 }
 img {
   aspect-ratio: 4/3;
+}
+@media (min-width: 1024px) {
+  .text-body-large {
+    font-size: 2rem;
+  }
+  .text-title-large {
+    font-size: 2.66667rem;
+  }
+}
+@media (min-width: 1280px) {
+  .text-body-large {
+    font-size: 1.8rem;
+  }
+  .text-title-large {
+    font-size: 2.4rem;
+  }
 }
