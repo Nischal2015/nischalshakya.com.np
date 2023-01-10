@@ -253,8 +253,8 @@ module.exports = {
         '1.6rem',
         {
           lineHeight: '1.2',
-          letterSpacing: '',
-          fontWeight: '',
+          letterSpacing: '0.25px',
+          fontWeight: '400',
         },
       ],
       'headline-medium': [
