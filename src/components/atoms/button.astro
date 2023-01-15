@@ -1,5 +1,7 @@
 ---
 import { Icon } from 'astro-icon';
+
+type AsProps = { as?: 'a'; href: string; role: 'button' } | { as?: 'button' };
 interface CommonProps {
   class?: string;
   backgroundColor?: string;
@@ -10,19 +12,24 @@ type ConditionalProps =
   | { icon?: string; iconBgColor?: string; iconSize: string }
   | { icon?: undefined; iconBgColor?: undefined; iconSize: undefined };
 
-type Props = CommonProps & ConditionalProps;
+type Props = CommonProps & ConditionalProps & AsProps;
 
 const {
+  as,
   icon,
   class: className,
   backgroundColor = 'bg-source-primary',
   fontSize = 'text-headline-medium',
   iconBgColor,
   iconSize,
+  ...rest
 } = Astro.props as Props;
+
+const Component = as || 'button';
 ---
 
-<button
+<Component
+  {...rest}
   class:list={[
     `h-[8rem] ${backgroundColor} ${fontSize} border-0  rounded-[48px] py-lg ${className}`,
     { 'pd-sm': icon },
@@ -36,11 +43,12 @@ const {
       </span>
     )
   }
-</button>
+</Component>
 
 <style>
-  button {
-    display: flex;
+  button,
+  a {
+    display: inline-flex;
     align-items: center;
     justify-content: space-between;
     gap: 1.6rem;

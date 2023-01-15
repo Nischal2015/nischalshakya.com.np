@@ -22,7 +22,15 @@ import SectionName from '../atoms/section-name.astro';
         them serve their target users.
       </p>
 
-      <Button icon='right-arrow' iconSize={'h-2 w-2'}>About Me</Button>
+      <Button
+        as='a'
+        role='button'
+        href='#'
+        icon='right-arrow'
+        iconSize={'h-2 w-2'}
+      >
+        About Me
+      </Button>
     </div>
     <div class='flex flex-col gap-1'>
       <ExpandButton
