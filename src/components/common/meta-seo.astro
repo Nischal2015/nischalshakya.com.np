@@ -1,0 +1,50 @@
+---
+import type { MetaSeo } from '../../types';
+
+const {
+  title,
+  description,
+  ogType,
+  ogUrl,
+  socialDescription,
+  socialImage,
+  socialImageAlt,
+  socialTitle,
+  twitterCard,
+  twitterCreator,
+} = Astro.props as MetaSeo;
+---
+
+<meta charset='UTF-8' />
+<meta http-equiv='X-UA-Compatible' content='IE=edge' />
+<meta name='viewport' content='width=device-width, initial-scale=1.0' />
+<title>{title}</title>
+<meta name='description' content={description} />
+<meta name='robots' content='index, follow' />
+
+{socialTitle && <meta property='og:title' content={socialTitle} />}
+{
+  socialDescription && (
+    <meta property='og:description' content={socialDescription} />
+  )
+}
+{ogType && <meta property='og:type' content={ogType} />}
+{ogUrl && <meta property='og:url' content={ogUrl} />}
+{socialImage && <meta property='og:image' content={socialImage} />}
+{socialImageAlt && <meta property='og:image:alt' content={socialImageAlt} />}
+
+{twitterCard && <meta name='twitter:card' content={twitterCard} />}
+{twitterCreator && <meta name='twitter:creator' content={twitterCreator} />}
+{socialTitle && <meta name='twitter:title' content={socialTitle} />}
+{
+  socialDescription && (
+    <meta name='twitter:description' content={socialDescription} />
+  )
+}
+{socialImage && <meta name='twitter:image' content={socialImage} />}
+{socialImageAlt && <meta name='twitter:image:alt' content={socialImageAlt} />}
+
+<link rel='canonical' href={ogUrl} />
+<link rel='icon' href='/favicon.ico' sizes='any' />
+<link rel='icon' href='/favicon.svg' type='image/svg+xml' />
+<link rel='apple-touch-icon' href='/apple-touch-icon.png' />

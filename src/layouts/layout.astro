@@ -1,17 +1,12 @@
 ---
-interface Props {
-  title: string;
-}
-
-const { title } = Astro.props as Props;
+import { SEO } from '../config.mjs';
+import MetaSeo from '../components/common/meta-seo.astro';
 ---
 
 <!DOCTYPE html>
 <html lang='en'>
   <head>
-    <meta charset='UTF-8' />
-    <meta http-equiv='X-UA-Compatible' content='IE=edge' />
-    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <MetaSeo {...SEO} />
     <link rel='preconnect' href='https://fonts.googleapis.com' />
     <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
     <link
@@ -34,7 +29,6 @@ const { title } = Astro.props as Props;
       rel='stylesheet'
       media='screen'
     />
-    <title>{title}</title>
   </head>
   <body>
     <slot />
