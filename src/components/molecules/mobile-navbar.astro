@@ -6,14 +6,18 @@ import fullLogo from '/full-logo.svg';
 ---
 
 <nav
-  class='hidden lg:hidden flex-col gap-4 fixed inset-[0] translate-x-full z-50 bg-sys-light-on-tertiary bg-opacity-95 backdrop-blur-2xl'
+  class='hidden lg:hidden flex-col gap-4 fixed inset-[0] translate-x-full z-50 bg-sys-light-on-tertiary'
   id='mob_nav'
 >
   <div class='flex items-center nav-heading'>
     <a href='/'>
       <img src={fullLogo} alt='Portfolio Logo' width={192} />
     </a>
-    <IconButton class='ml-auto' label='Close menu' id='close-button'>
+    <IconButton
+      class='-translate-y-[4px] -translate-x-[10px] ml-auto'
+      label='Close menu'
+      id='close-button'
+    >
       <Close />
     </IconButton>
   </div>

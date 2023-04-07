@@ -12,7 +12,7 @@ import fullLogo from '/full-logo.svg';
     <div class='flex items-center gap-3'>
       <div>
         <a href='/'>
-          <img src={fullLogo} alt='Portfolio Logo' width={144} />
+          <img src={fullLogo} alt='Portfolio Logo' width={160} />
         </a>
       </div>
       <nav class='hidden lg:block'>
@@ -29,7 +29,11 @@ import fullLogo from '/full-logo.svg';
     <div class='gap-[2.8rem] items-baseline hidden lg:flex'>
       <SocialCollection />
     </div>
-    <IconButton label='Open Menu' id='menu-button' class='lg:hidden'>
+    <IconButton
+      label='Open Menu'
+      id='menu-button'
+      class='-translate-y-[4px] -translate-x-[10px] lg:hidden'
+    >
       <Menu />
     </IconButton>
   </nav>
