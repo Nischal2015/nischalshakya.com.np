@@ -13,7 +13,7 @@ const { image, summary, title, altText } = Astro.props as Props;
 
 <div class='project'>
   <div class='rounded-[2.4rem] image-container overflow-hidden'>
-    <Picture src={image} alt={altText} />
+    <Picture src={image} alt={altText} aspect={4 / 3} />
   </div>
   <h3 class='text-title-large h3'>{title}</h3>
   <p class='text-body-large'>{summary}</p>

@@ -1,0 +1,33 @@
+---
+interface Props {
+  href: string;
+}
+
+const { href } = Astro.props as Props;
+---
+
+<li><a href={href} class='py-[0.8rem] navlink'><slot /></a></li>
+
+<style>
+  .navlink:link {
+    position: relative;
+  }
+
+  .navlink:link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -2px;
+    width: calc(100% + 10px);
+    transform: scaleX(0);
+    transform-origin: 100% 0;
+    height: 2px;
+    background: #212529;
+    transition: transform 0.2s cubic-bezier(0.09, 1, 1, 1);
+  }
+
+  .navlink:hover::after {
+    transform: scaleX(1);
+    transform-origin: 0 0;
+  }
+</style>
