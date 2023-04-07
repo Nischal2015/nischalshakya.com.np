@@ -1,0 +1,44 @@
+<script is:inline>
+  function attachEvent(selector, event, cb) {
+    const matches =
+      typeof selector === 'string'
+        ? document.querySelectorAll(selector)
+        : selector;
+
+    if (matches && matches.length) {
+      matches.forEach((match) =>
+        match.addEventListener(event, (e) => cb(e, match), false)
+      );
+    }
+  }
+
+  window.onload = function () {
+    const mobNav = document.querySelector('#header #mob_nav');
+    attachEvent('#menu-button', 'click', function () {
+      mobNav.classList.remove('hidden');
+      mobNav.classList.add('flex');
+      mobNav.classList.remove('translate-x-full');
+      mobNav.classList.add('slide-in--right');
+      mobNav.classList.contains('slide-in--right') &&
+        mobNav.addEventListener('animationend', () => {
+          mobNav.classList.remove('slide-in--right');
+        });
+      mobNav.classList.add('translate-x-0');
+    });
+
+    attachEvent('#close-button', 'click', function () {
+      mobNav.classList.remove('translate-x-0');
+      mobNav.classList.add('slide-out--left');
+      mobNav.classList.contains('slide-out--left') &&
+        mobNav.addEventListener('animationend', () => {
+          mobNav.classList.remove('slide-out--left');
+        });
+      mobNav.classList.add('translate-x-full');
+      const timeout = setTimeout(() => {
+        mobNav.classList.remove('flex');
+        mobNav.classList.add('hidden');
+        clearTimeout(timeout);
+      }, 400);
+    });
+  };
+</script>

@@ -1,0 +1,71 @@
+---
+import Close from '../../icons/close.astro';
+import IconButton from '../atoms/icon-button.astro';
+import SocialCollection from './social-collection.astro';
+import fullLogo from '/full-logo.svg';
+---
+
+<nav
+  class='hidden lg:hidden flex-col gap-4 fixed inset-[0] translate-x-full z-50 bg-sys-light-on-tertiary bg-opacity-95 backdrop-blur-2xl'
+  id='mob_nav'
+>
+  <div class='flex items-center nav-heading'>
+    <a href='/'>
+      <img src={fullLogo} alt='Portfolio Logo' width={192} />
+    </a>
+    <IconButton class='ml-auto' label='Close menu' id='close-button'>
+      <Close />
+    </IconButton>
+  </div>
+
+  <nav class='is-mobile'>
+    <ul
+      class='flex flex-col gap-3 text-headline-medium font-montserrat font-medium'
+    >
+      <li><a href='/'>Home</a></li>
+      <li><a href='/about'>About</a></li>
+      <li><a href='/projects'>Projects</a></li>
+      <li><a href='/articles'>Articles</a></li>
+    </ul>
+  </nav>
+
+  <div class='flex items-center justify-center gap-3 p-4 mt-auto social'>
+    <SocialCollection className='h-[4rem] w-[4rem]' />
+  </div>
+</nav>
+
+<style>
+  .nav-heading {
+    padding-inline-start: 1.2rem;
+    padding-inline-end: calc(4vw + 0.2rem);
+    padding-block: 1.8rem;
+  }
+  .is-mobile {
+    padding-inline: 3.2rem;
+  }
+  .slide-in--right {
+    animation: slide-in--right 0.3s cubic-bezier(0.09, 1, 1, 1);
+  }
+  .slide-out--left {
+    animation: slide-out--left 0.3s cubic-bezier(0.09, 1, 1, 1);
+  }
+  .social {
+    box-shadow: 0 -4px 32px 0px rgba(0, 0, 0, 0.1);
+  }
+  @keyframes slide-in--right {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+  @keyframes slide-out--left {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(100%);
+    }
+  }
+</style>
