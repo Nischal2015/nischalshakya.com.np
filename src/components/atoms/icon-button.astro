@@ -1,0 +1,15 @@
+---
+export interface Props {
+  label?: string;
+  class?: string;
+  iconClass?: string;
+  iconName?: string;
+  id?: string;
+}
+
+const { label = 'Toggle Menu', class: className, id } = Astro.props;
+---
+
+<button type='button' class={className} aria-label={label} id={id}>
+  <slot />
+</button>

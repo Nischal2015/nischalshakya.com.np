@@ -1,0 +1,40 @@
+---
+import SocialLink from '../atoms/social-link.astro';
+
+interface Props {
+  className?: string;
+}
+
+const { className } = Astro.props as Props;
+---
+
+<SocialLink
+  href='https://twitter.com/nischalshakya21'
+  icon='twitter'
+  ariaLabel="Nischal's Twitter Profile"
+  className={className}
+/>
+<SocialLink
+  href='https://www.github.com/Nischal2015'
+  icon='github'
+  ariaLabel="Nischal's Github Profile"
+  className={className}
+/>
+<SocialLink
+  href='https://www.linkedin.com/in/nischal-shakya-192749181/'
+  icon='linkedin'
+  ariaLabel="Nischal's LinkedIn Profile"
+  className={className}
+/>
+<SocialLink
+  href='https://www.instagram.com/nischal_shakya_/'
+  icon='instagram'
+  ariaLabel="Nischal's Instagram Profile"
+  className={className}
+/>
+<SocialLink
+  href='https://www.facebook.com/nischal.shakya.2015/'
+  icon='facebook'
+  ariaLabel="Nischal's Facebook Profile"
+  className={className}
+/>
