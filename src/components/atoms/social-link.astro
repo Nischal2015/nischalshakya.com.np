@@ -5,18 +5,19 @@ interface Props {
   href: string;
   icon: string;
   ariaLabel: string;
+  className?: string | undefined;
 }
 
-const { href, icon, ariaLabel } = Astro.props as Props;
+const { href, icon, ariaLabel, className = 'h-2 w-2' } = Astro.props as Props;
 ---
 
-<span class='h-[3.2rem] w-[3.2rem]'>
+<span class={className}>
   <a
     href={href}
     aria-label={ariaLabel}
     target='_blank'
     rel='noreferrer noopener'
   >
-    <Icon name={icon} />
+    <Icon name={icon} class={className} />
   </a>
 </span>

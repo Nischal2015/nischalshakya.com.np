@@ -1,6 +1,6 @@
 ---
 import Section from '../../layouts/section.astro';
-import SocialLink from '../atoms/social-link.astro';
+import SocialCollection from '../molecules/social-collection.astro';
 ---
 
 <footer>
@@ -8,26 +8,7 @@ import SocialLink from '../atoms/social-link.astro';
     <p class='text-display-medium p font-montserrat'>Want to know me more?</p>
     <div class='text-[4.8rem] font-light connect'>Let's connect</div>
     <div class='inline-flex gap-4 items-center social-collection'>
-      <SocialLink
-        href='https://www.github.com/Nischal2015'
-        icon='github'
-        ariaLabel="Nischal's GIthub Profile"
-      />
-      <SocialLink
-        href='https://www.linkedin.com/in/nischal-shakya-192749181/'
-        icon='linkedin'
-        ariaLabel="Nischal's LinkedIn Profile"
-      />
-      <SocialLink
-        href='https://www.instagram.com/nischal_shakya_/'
-        icon='instagram'
-        ariaLabel="Nischal's Instagram Profile"
-      />
-      <SocialLink
-        href='https://www.facebook.com/nischal.shakya.2015/'
-        icon='facebook'
-        ariaLabel="Nischal's Facebook Profile"
-      />
+      <SocialCollection className='h-[3.2rem] w-[3.2rem]' />
     </div>
     <div>
       <span class='text-body-large'>
