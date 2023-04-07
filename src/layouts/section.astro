@@ -10,26 +10,22 @@ const paddingBlock = py ? `${py}rem` : '9.6rem';
 ---
 
 <section class={`${bg} section ${className}`}>
-  <div class='container m-auto'>
+  <div class='containers m-auto'>
     <slot />
   </div>
 </section>
 
 <style define:vars={{ paddingBlock }}>
-  .container {
-    padding-inline: 2.4rem;
-  }
   .section {
     padding-block: var(--paddingBlock);
   }
-  @media (min-width: 1024px) {
-    .container {
-      padding-inline: 3.2rem;
-    }
+  .containers {
+    padding-inline: 4vw;
+    max-width: 153.6rem;
   }
-  @media (min-width: 1280px) {
-    .container {
-      padding-inline: 5.33rem;
+  @media (min-width: 153.6rem) {
+    .containers {
+      padding-inline: 0;
     }
   }
 </style>
