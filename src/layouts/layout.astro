@@ -1,6 +1,8 @@
 ---
 import { SEO } from '../config.mjs';
 import MetaSeo from '../components/common/meta-seo.astro';
+import Navbar from '../components/molecules/navbar.astro';
+import ToggleScript from '../components/common/toggle-script.astro';
 ---
 
 <!DOCTYPE html>
@@ -31,6 +33,8 @@ import MetaSeo from '../components/common/meta-seo.astro';
     />
   </head>
   <body>
+    <Navbar />
     <slot />
+    <ToggleScript />
   </body>
 </html>
