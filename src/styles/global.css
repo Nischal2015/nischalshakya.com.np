@@ -2,7 +2,7 @@ html {
   @apply xl:text-[62.5%] lg:text-[56.25%] text-[50%];
 }
 body {
-  @apply font-opensans leading-none;
+  @apply font-opensans leading-none overflow-x-hidden;
 }
 h1 {
   @apply font-montserrat text-display-large;
@@ -20,9 +20,6 @@ iframe {
   block-size: auto;
   object-fit: cover;
   object-position: top center;
-}
-img {
-  aspect-ratio: 4/3;
 }
 @media (min-width: 1024px) {
   .text-body-large {
