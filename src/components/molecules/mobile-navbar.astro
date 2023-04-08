@@ -1,8 +1,8 @@
 ---
+import { Icon } from 'astro-icon';
 import Close from '../../icons/close.astro';
 import IconButton from '../atoms/icon-button.astro';
 import SocialCollection from './social-collection.astro';
-import fullLogo from '/full-logo.svg';
 ---
 
 <nav
@@ -11,7 +11,7 @@ import fullLogo from '/full-logo.svg';
 >
   <div class='flex items-center nav-heading'>
     <a href='/'>
-      <img src={fullLogo} alt='Portfolio Logo' width={192} />
+      <Icon name='full-logo' class='w-[192px] h-auto' />
     </a>
     <IconButton
       class='-translate-y-[4px] -translate-x-[10px] ml-auto'

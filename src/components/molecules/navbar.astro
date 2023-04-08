@@ -1,10 +1,10 @@
 ---
+import { Icon } from 'astro-icon';
 import Menu from '../../icons/menu.astro';
 import IconButton from '../atoms/icon-button.astro';
 import NavLink from '../atoms/nav-link.astro';
 import MobileNavbar from './mobile-navbar.astro';
 import SocialCollection from './social-collection.astro';
-import fullLogo from '/full-logo.svg';
 ---
 
 <header class='header' id='header'>
@@ -12,7 +12,7 @@ import fullLogo from '/full-logo.svg';
     <div class='flex items-center gap-3'>
       <div>
         <a href='/'>
-          <img src={fullLogo} alt='Portfolio Logo' width={160} height={25} />
+          <Icon name='full-logo' class='w-[160px] h-auto' />
         </a>
       </div>
       <nav class='hidden lg:block'>
