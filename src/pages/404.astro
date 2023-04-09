@@ -1,0 +1,24 @@
+---
+import { Icon } from 'astro-icon';
+import * as SEO from '../content/seo/404.md';
+import BaseLayout from '../layouts/base-layout.astro';
+
+const currentPath = Astro.url.pathname;
+---
+
+<BaseLayout meta={SEO.frontmatter} className='bg-black'>
+  <div class='text-sys-light-on-tertiary flex items-center justify-center'>
+    <div
+      class='-translate-y-[5vh] h-[100vh] flex flex-col items-center justify-center'
+    >
+      <Icon name='astro' class='w-3/4' />
+      <h1 class='text-headline-large tracking-wide mt-2'>
+        <span class='text-[#ff5d01] font-semibold'>404:{' '}</span>
+        <span class='inline-block font-medium mt-1'>Page Not Found</span>
+      </h1>
+      <span class='mt-1 text-body-large text-white'>
+        Path: {currentPath}
+      </span>
+    </div>
+  </div>
+</BaseLayout>
