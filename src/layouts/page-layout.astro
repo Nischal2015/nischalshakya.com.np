@@ -1,14 +1,15 @@
 ---
-import { SEO } from '../config.mjs';
-import MetaSeo from '../components/common/meta-seo.astro';
 import Navbar from '../components/molecules/navbar.astro';
 import ToggleScript from '../components/common/toggle-script.astro';
+import Footer from '../components/sections/footer.astro';
+import Layout from './base-layout.astro';
+import type { MetaSeoProps } from '../types';
+
+const { meta } = Astro.props as MetaSeoProps;
 ---
 
-<!DOCTYPE html>
-<html lang='en'>
-  <head>
-    <MetaSeo {...SEO} />
+<Layout {meta}>
+  <Fragment slot='font'>
     <link rel='preconnect' href='https://fonts.googleapis.com' />
     <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
     <link
@@ -31,10 +32,12 @@ import ToggleScript from '../components/common/toggle-script.astro';
       rel='stylesheet'
       media='screen'
     />
-  </head>
-  <body>
-    <Navbar />
+  </Fragment>
+
+  <Navbar />
+  <main>
     <slot />
-    <ToggleScript />
-  </body>
-</html>
+  </main>
+  <ToggleScript />
+  <Footer />
+</Layout>

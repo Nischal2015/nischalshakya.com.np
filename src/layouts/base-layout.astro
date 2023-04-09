@@ -1,0 +1,20 @@
+---
+import MetaSeo from '../components/common/meta-seo.astro';
+import type { MetaSeoProps } from '../types';
+import '../styles/global.css';
+
+const { meta, className = '' } = Astro.props as MetaSeoProps & {
+  className?: string;
+};
+---
+
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <MetaSeo {...meta} />
+    <slot name='font' />
+  </head>
+  <body class={className}>
+    <slot />
+  </body>
+</html>
