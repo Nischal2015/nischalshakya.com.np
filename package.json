@@ -13,6 +13,7 @@
     "test:e2e": "npx playwright test"
   },
   "devDependencies": {
+    "@astrojs/mdx": "^0.18.3",
     "@astrojs/tailwind": "^3.1.1",
     "@playwright/test": "^1.29.2",
     "astro": "^2.2.1",
