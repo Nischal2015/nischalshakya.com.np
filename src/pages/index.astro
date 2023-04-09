@@ -1,17 +1,15 @@
 ---
-import Layout from '../layouts/layout.astro';
+import * as SEO from '../content/seo/index.md';
+import Layout from '../layouts/page-layout.astro';
 import Experience from '../components/sections/experience.astro';
 import ProjectShowcase from '../components/sections/project-showcase.astro';
 import AboutMe from '../components/sections/about-me.astro';
-import Footer from '../components/sections/footer.astro';
-import '../styles/global.css';
+
+const { frontmatter } = SEO;
 ---
 
-<Layout title='Nischal Shakya'>
-  <main>
-    <Experience />
-    <ProjectShowcase />
-    <AboutMe />
-  </main>
-  <Footer />
+<Layout meta={frontmatter}>
+  <Experience />
+  <ProjectShowcase />
+  <AboutMe />
 </Layout>
