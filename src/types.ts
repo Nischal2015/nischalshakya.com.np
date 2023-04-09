@@ -1,5 +1,6 @@
 export interface MetaSeo {
   title?: string;
+  robots?: string;
   description?: string;
 
   // Social
@@ -16,3 +17,7 @@ export interface MetaSeo {
   twitterCreator?: string;
   twitterCard?: 'summary' | 'summary_large_image';
 }
+
+export type MetaSeoProps = {
+  meta: MetaSeo;
+};
