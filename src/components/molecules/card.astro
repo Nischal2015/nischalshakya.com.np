@@ -1,0 +1,69 @@
+---
+import { Picture } from '@astrojs/image/components';
+
+interface Props {
+  imageShow: string;
+  imageShowAlt: string;
+  imageSlide: string;
+  imageSlideAlt: string;
+  subtitle: string;
+  title: string;
+}
+
+const { imageShow, imageSlideAlt, imageSlide, imageShowAlt, subtitle, title } =
+  Astro.props as Props;
+---
+
+<div class='card'>
+  <div class='rounded-[2.4rem] image-container overflow-hidden'>
+    <Picture
+      src={imageSlide}
+      alt={imageSlideAlt}
+      class='image image-slide'
+      aspectRatio={4 / 3}
+      widths={[400, 768, 1024, 2040]}
+      sizes='(max-width: 767px) 400px, (max-width: 1023px) 768px, (max-width: 2039px) 1024px, 2040px'
+      width={1024}
+      height={576}
+    />
+    <Picture
+      src={imageShow}
+      alt={imageShowAlt}
+      class='image image-show'
+      aspectRatio={4 / 3}
+      sizes='(max-width: 767px) 400px, (max-width: 1023px) 768px, (max-width: 2039px) 1024px, 2040px'
+      widths={[400, 768, 1024, 2040]}
+      width={1024}
+      height={576}
+    />
+  </div>
+  <h3 class='text-title-large h3'>{title}</h3>
+  <p class='text-body-large'>{subtitle}</p>
+</div>
+
+<style>
+  .card:hover .image-slide {
+    transform: translateX(0);
+  }
+  .card:hover .image-show {
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+  }
+  .image-container {
+    margin-block-end: 2.4rem;
+    position: relative;
+    width: 100%;
+  }
+  .image-show {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    transition: clip-path 1s cubic-bezier(0.3, 1, 0.2, 1);
+  }
+  .image-slide {
+    position: absolute;
+    inset: 0;
+    transform: translateX(20%);
+    transition: transform 1s cubic-bezier(0.3, 1, 0.2, 1);
+  }
+  .h3 {
+    margin-block-end: 1.2rem;
+  }
+</style>

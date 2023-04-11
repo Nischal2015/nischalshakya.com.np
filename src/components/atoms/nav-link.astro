@@ -3,10 +3,17 @@ interface Props {
   href: string;
 }
 
+const pathname = new URL(Astro.request.url).pathname;
 const { href } = Astro.props as Props;
 ---
 
-<li><a href={href} class='py-[0.8rem] navlink'><slot /></a></li>
+<li>
+  <a
+    href={href}
+    class:list={[`py-[0.8rem] navlink ${pathname === href ? 'active' : ''}`]}
+    ><slot /></a
+  >
+</li>
 
 <style>
   .navlink:link {
@@ -26,6 +33,7 @@ const { href } = Astro.props as Props;
     transition: transform 0.2s cubic-bezier(0.09, 1, 1, 1);
   }
 
+  .navlink.active::after,
   .navlink:hover::after {
     transform: scaleX(1);
     transform-origin: 0 0;
