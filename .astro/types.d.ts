@@ -111,10 +111,47 @@ declare module 'astro:content' {
 	>;
 
 	const entryMap: {
-		"seo": {
+		"articles": {
+"creating-an-ec2-instance.md": {
+  id: "creating-an-ec2-instance.md",
+  slug: "creating-an-ec2-instance",
+  body: string,
+  collection: "articles",
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".md"] },
+"getting-inside-docker-containers.md": {
+  id: "getting-inside-docker-containers.md",
+  slug: "getting-inside-docker-containers",
+  body: string,
+  collection: "articles",
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".md"] },
+"getting-started-with-docker.md": {
+  id: "getting-started-with-docker.md",
+  slug: "getting-started-with-docker",
+  body: string,
+  collection: "articles",
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".md"] },
+"how-to-ssh-into-ec2-instance.md": {
+  id: "how-to-ssh-into-ec2-instance.md",
+  slug: "how-to-ssh-into-ec2-instance",
+  body: string,
+  collection: "articles",
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".md"] },
+},
+"seo": {
 "404.md": {
   id: "404.md",
   slug: "404",
+  body: string,
+  collection: "seo",
+  data: InferEntrySchema<"seo">
+} & { render(): Render[".md"] },
+"articles.md": {
+  id: "articles.md",
+  slug: "articles",
   body: string,
   collection: "seo",
   data: InferEntrySchema<"seo">
