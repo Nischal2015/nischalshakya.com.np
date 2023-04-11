@@ -16,6 +16,18 @@ const seoCollection = defineCollection({
   }),
 });
 
+const articlesCollection = defineCollection({
+  schema: z.object({
+    title: z.string(),
+    subtitle: z.string(),
+    imageShow: z.string(),
+    imageShowAlt: z.string(),
+    imageSlide: z.string(),
+    imageSlideAlt: z.string(),
+  }),
+});
+
 export const collections = {
   seo: seoCollection,
+  articles: articlesCollection,
 };
