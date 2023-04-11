@@ -331,8 +331,7 @@ module.exports = {
       6: '12.8rem',
     },
     fontFamily: {
-      opensans: ['Open Sans', 'sans-serif'],
-      montserrat: ['Montserrat', 'sans-serif'],
+      'neue-montreal': ['Neue Montreal', 'sans-serif'],
     },
     extend: {
       gridTemplateColumns: {
