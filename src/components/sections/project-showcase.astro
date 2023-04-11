@@ -3,7 +3,7 @@ import Section from '../../layouts/section.astro';
 import Button from '../atoms/button.astro';
 import SectionName from '../atoms/section-name.astro';
 import { getAllData as getAllProjects } from '../../services/data';
-import Project from '../molecules/project.astro';
+import Card from '../molecules/card.astro';
 
 interface Project {
   title: string;
@@ -22,7 +22,7 @@ const projects: Project[] = await getAllProjects(
 );
 ---
 
-<Section bg='bg-ref-green-99'>
+<Section>
   <SectionName>My Projects</SectionName>
   <h2 class='h2'>
     Projects that I've worked in
@@ -41,7 +41,7 @@ const projects: Project[] = await getAllProjects(
             single_line_summary,
           },
         }) => (
-          <Project
+          <Card
             title={title}
             altText={alttext}
             image={imgix_url}
