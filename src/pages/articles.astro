@@ -10,7 +10,10 @@ const articles = await getCollection('articles');
 
 <PageLayout meta={frontmatter}>
   <Section>
-    <h1 class='text-center h1'>Articles</h1>
+    <h1 class='text-center'>Articles</h1>
+    <h2 class='text-center text-display-small tracking-wide h2 text-gray'>
+      Unleashing the power of words
+    </h2>
     <div class='grid grid-cols-1 gap-x-2 gap-y-4 projects md:grid-cols-2'>
       {
         articles.map((article) => {
@@ -31,7 +34,8 @@ const articles = await getCollection('articles');
 </PageLayout>
 
 <style>
-  .h1 {
+  .h2 {
+    margin-block-start: 0.4rem;
     margin-block-end: 9.6rem;
   }
 </style>
