@@ -1,15 +1,9 @@
 ---
-import * as SEO from '../content/seo/index.md';
-import Layout from '../layouts/page-layout.astro';
-import Experience from '../components/sections/experience.astro';
-import ProjectShowcase from '../components/sections/project-showcase.astro';
+import { frontmatter } from '../content/seo/index.md';
+import PageLayout from '../layouts/page-layout.astro';
 import AboutMe from '../components/sections/about-me.astro';
-
-const { frontmatter } = SEO;
 ---
 
-<Layout meta={frontmatter}>
-  <Experience />
-  <ProjectShowcase />
+<PageLayout meta={frontmatter}>
   <AboutMe />
-</Layout>
+</PageLayout>

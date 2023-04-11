@@ -9,16 +9,12 @@ import SocialCollection from './social-collection.astro';
 
 <header class='header' id='header'>
   <nav class='flex items-center justify-between containers mx-auto'>
-    <div class='flex items-center gap-3'>
-      <div>
-        <a href='/' aria-label='Portfolio logo'>
-          <Icon name='full-logo' class='w-[160px] h-auto' />
-        </a>
-      </div>
+    <div class='flex items-center gap-5'>
+      <a href='/' aria-label='Portfolio logo'>
+        <Icon name='full-logo' class='w-[160px] h-auto' />
+      </a>
       <nav class='hidden lg:block'>
-        <ul
-          class='flex gap-[2.8rem] text-headline-small font-montserrat font-medium'
-        >
+        <ul class='flex gap-3 text-[1.8rem] font-normal tracking-wide'>
           <NavLink href='/'>Home</NavLink>
           <NavLink href='/about'>About</NavLink>
           <NavLink href='/projects'>Projects</NavLink>
