@@ -3,6 +3,7 @@ module.exports = {
   content: ['./src/**/*.astro'],
   theme: {
     colors: {
+      light: '#ffffff',
       white: '#f8f9fa',
       black: '#212529',
       source: {
@@ -286,14 +287,13 @@ module.exports = {
         {
           lineHeight: '1.2',
           letterSpacing: '-0.5px',
-          fontWeight: '500',
+          fontWeight: '400',
         },
       ],
       'display-large': [
-        '9.6rem',
+        '11.2rem',
         {
-          lineHeight: '1.2',
-          letterSpacing: '-1.5px',
+          lineHeight: '1.1',
           fontWeight: '400',
         },
       ],
