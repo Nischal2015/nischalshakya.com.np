@@ -1,22 +1,20 @@
 ---
 import Navbar from '../components/molecules/navbar.astro';
 import ToggleScript from '../components/common/toggle-script.astro';
-import Footer from '../components/sections/footer.astro';
-import Layout from './base-layout.astro';
-import type { MetaSeoProps } from '../types';
+import BaseLayout from './base-layout.astro';
+import type { MetaSeo } from '../types';
 
-const { meta } = Astro.props as MetaSeoProps;
+interface Props {
+  meta: MetaSeo;
+}
+
+const { meta } = Astro.props as Props;
 ---
 
-<Layout {meta}>
-  <Fragment slot='font'>
-    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
-  </Fragment>
-
+<BaseLayout meta={meta}>
   <Navbar />
   <main>
     <slot />
   </main>
   <ToggleScript />
-  <Footer />
-</Layout>
+</BaseLayout>
