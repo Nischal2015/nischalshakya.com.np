@@ -1,41 +1,36 @@
 ---
 import { Picture } from '@astrojs/image/components';
 
+type Image = {
+  src: string;
+  alt: string;
+};
 interface Props {
-  imageShow: string;
-  imageShowAlt: string;
-  imageSlide: string;
-  imageSlideAlt: string;
+  images: Image[];
   subtitle: string;
   title: string;
 }
 
-const { imageShow, imageSlideAlt, imageSlide, imageShowAlt, subtitle, title } =
-  Astro.props as Props;
+const { images, subtitle, title } = Astro.props as Props;
+const classes = ['image-slide', 'image-show'];
 ---
 
 <div class='card'>
   <div class='rounded-[2.4rem] image-container overflow-hidden'>
-    <Picture
-      src={imageSlide}
-      alt={imageSlideAlt}
-      class='image image-slide'
-      aspectRatio={4 / 3}
-      widths={[400, 768]}
-      sizes='(max-width: 767px) 400px,  768px'
-      width={768}
-      height={576}
-    />
-    <Picture
-      src={imageShow}
-      alt={imageShowAlt}
-      class='image image-show'
-      aspectRatio={4 / 3}
-      widths={[400, 768]}
-      sizes='(max-width: 767px) 400px, 768px'
-      width={768}
-      height={576}
-    />
+    {
+      images.map(({ src, alt }, i) => (
+        <Picture
+          src={src}
+          alt={alt}
+          class={`image ${classes[i]}`}
+          aspectRatio={4 / 3}
+          widths={[400, 768]}
+          sizes='(max-width: 767px) 400px,  768px'
+          width={768}
+          height={576}
+        />
+      ))
+    }
   </div>
   <h3 class='text-title-large h3'>{title}</h3>
   <p class='text-body-large'>{subtitle}</p>
