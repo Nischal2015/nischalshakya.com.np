@@ -1,50 +1,51 @@
-# Welcome to [Astro](https://astro.build)
+# Personal Portfolio Website
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/s/github/withastro/astro/tree/latest/examples/basics)
+This repository contains the code for my personal portfolio website, which is hosted on Vercel and built using Astro for the UI and Tailwind CSS for styling. The website serves as a showcase of my skills, projects, articles and experience as a software developer.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+![Portfolio Home Page](https://res.cloudinary.com/dt7uxtenl/image/upload/v1681319319/frontpage_jmdvtk.png)
 
-![basics](https://user-images.githubusercontent.com/4677417/186188965-73453154-fdec-4d6b-9c34-cb35c248ae5b.png)
+## Table of Contents
 
+- [Technologies Used](#technologies-used)
+- [Features](#features)
+- [Getting Started](#getting-started)
+- [License](#license)
+- [Contact](#contact)
 
-## 🚀 Project Structure
+## Technologies Used
 
-Inside of your Astro project, you'll see the following folders and files:
+- [Astro](https://astro.build/) A modern static site builder that allows me to write UI components in my favorite front-end framework, such as React, Vue, Svelte or Solid, and compile them to static HTML, CSS, and Javascript.
+- [Tailwind CSS](https://tailwindcss.com/) A highly customizable CSS framework that allows me to rapidly built responsive and modern user interfaces.
+- [Vercel](https://vercel.com/) A cloud platform for deploying and hosting static websites and serverless functions with an intuitive and easy-to-use-workflow.
 
-```
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+## Features
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+- **Responsive design**: The website is fully responsive and optimized for different screen sizes, including desktop, tablet, and mobile.
+- **Minimalistic UI**: The website has a sleek and minimalistic UI, built using Astro and styled with Tailwind CSS, providing a visually appealing experience for visitors.
+- **Easy customization**: Astro and Tailwind CSS allow for easy customization of the website's appearance and functionality, making it simple for me to update and personalize the website to reflect my own branding and style.
+- **Fast performance**: The website is optimized for performance, with minimal loading times and efficient rendering, ensuring a smooth and seamless experience for visitors.
+- **SEO-friendly**: The website is built with SEO best practices in mind, including proper HTML semantics, meta tags, and accessibility features.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## Getting Started
 
-Any static assets, like images, can be placed in the `public/` directory.
+To get starting with the code in this repository, follow these steps:
 
-## 🧞 Commands
+1. Clone the repository to your local machine using `git clone`.
+2. Install the dependencies using `npm install`, `yarn install` or `pnpm install`.
+3. Run the development server using `npm run dev`, `yarn dev` or `pnpm run dev`
+4. Open your web browser and go to `http://localhost:3000` to see the website running locally.
 
-All commands are run from the root of the project, from a terminal:
+To run the project using **Docker**, follow these steps:
 
-| Command                | Action                                             |
-| :--------------------- | :------------------------------------------------- |
-| `npm install`          | Installs dependencies                              |
-| `npm run dev`          | Starts local dev server at `localhost:3000`        |
-| `npm run build`        | Build your production site to `./dist/`            |
-| `npm run preview`      | Preview your build locally, before deploying       |
-| `npm run astro ...`    | Run CLI commands like `astro add`, `astro preview` |
-| `npm run astro --help` | Get help using the Astro CLI                       |
+1. Run the production build using `docker compose up -d`.
+2. Open your web browser and got to `http://localhost:8910` to see the website running locally.
 
-## 👀 Want to learn more?
+## License
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+This project is open source and available under the [BSD 3-Clause License](https://opensource.org/license/bsd-3-clause/).
+
+## Contact
+
+If you have any questions, feedback, or inquiries, you can react me at <a href='mailto:nischalshakya2015@gmail.com'>nischalshakya2015@gmaill.com</a> or [Github](https://github.com/Nischal2015/)
+
+Thank you :heart_eyes: for visiting my portfolio website repository!
