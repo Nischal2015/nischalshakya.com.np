@@ -10,7 +10,7 @@ interface CommonProps {
 
 type ConditionalProps =
   | { icon?: string; iconSize: string }
-  | { icon?: undefined; iconSize: undefined };
+  | { icon?: undefined; iconSize?: undefined };
 
 type Props = CommonProps & ConditionalProps & AsProps;
 
@@ -18,7 +18,7 @@ const {
   as,
   icon,
   class: className,
-  backgroundColor = 'bg-source-primary',
+  backgroundColor = 'bg-transparent',
   fontSize = 'text-headline-medium',
   iconSize,
   ...rest
@@ -30,7 +30,7 @@ const Component = as || 'button';
 <Component
   {...rest}
   class:list={[
-    `px-sm ${backgroundColor} ${fontSize} border-0  rounded-[48px] py-lg ${className}`,
+    `px-sm ${backgroundColor} ${fontSize} border-0  rounded-[48px] py-lg border-solid border-black border-2 ${className} button-text`,
     { 'pd-md': icon },
   ]}
 >
@@ -45,12 +45,35 @@ const Component = as || 'button';
 </Component>
 
 <style>
-  button,
-  a {
+  .button-text {
     display: inline-flex;
     align-items: center;
     justify-content: space-between;
     gap: 1.6rem;
+    position: relative;
+    overflow: hidden;
+    transition: stroke 0.5s cubic-bezier(0.3, 1, 0.2, 1),
+      color 0.5s cubic-bezier(0.3, 1, 0.2, 1);
+    z-index: 1;
+  }
+  .button-text::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: #212529;
+    transform-origin: bottom;
+    transform: scaleY(0);
+    transition: transform 0.5s cubic-bezier(0.3, 1, 0.2, 1);
+    z-index: -1;
+  }
+  .button-text:hover {
+    color: #f8f9fa;
+  }
+  .button-text:hover svg {
+    stroke: #f8f9fa;
+  }
+  .button-text:hover::before {
+    transform: scaleY(1);
   }
   .py-lg {
     padding-inline: 4.8rem;

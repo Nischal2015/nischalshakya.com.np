@@ -43,6 +43,16 @@ iframe {
   object-fit: cover;
   object-position: top center;
 }
+::-moz-selection {
+  /* Code for Firefox */
+  color: #f8f9fa;
+  background: #212529;
+}
+
+::selection {
+  color: #f8f9fa;
+  background: #212529;
+}
 @media (min-width: 1024px) {
   .text-body-large {
     font-size: 2rem;

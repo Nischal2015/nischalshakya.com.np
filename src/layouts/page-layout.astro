@@ -3,6 +3,7 @@ import Navbar from '../components/molecules/navbar.astro';
 import ToggleScript from '../components/common/toggle-script.astro';
 import BaseLayout from './base-layout.astro';
 import type { MetaSeo } from '../types';
+import Footer from '../components/sections/footer.astro';
 
 interface Props {
   meta: MetaSeo;
@@ -16,5 +17,6 @@ const { meta } = Astro.props as Props;
   <main>
     <slot />
   </main>
+  <Footer />
   <ToggleScript />
 </BaseLayout>
