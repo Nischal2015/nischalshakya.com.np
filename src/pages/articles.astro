@@ -24,7 +24,11 @@ const articles = await getCollection('articles');
             title={data.title}
             subtitle={data.subtitle}
             images={[
-              { src: data.imageSlide, alt: data.imageSlideAlt },
+              {
+                src: data.imageSlide,
+                alt: data.imageSlideAlt,
+                loading: 'lazy',
+              },
               {
                 src: data.imageShow,
                 alt: data.imageShowAlt,

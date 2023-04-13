@@ -4,6 +4,7 @@ import { Picture } from '@astrojs/image/components';
 type Image = {
   src: string;
   alt: string;
+  loading?: 'lazy' | 'eager';
 };
 interface Props {
   images: Image[];
@@ -18,7 +19,7 @@ const classes = ['image-slide', 'image-show'];
 <div class='card'>
   <div class='rounded-[2.4rem] image-container overflow-hidden'>
     {
-      images.map(({ src, alt }, i) => (
+      images.map(({ src, alt, loading = 'eager' }, i) => (
         <Picture
           src={src}
           alt={alt}
@@ -28,6 +29,7 @@ const classes = ['image-slide', 'image-show'];
           sizes='(max-width: 767px) 400px,  768px'
           width={768}
           height={576}
+          loading={loading}
         />
       ))
     }
