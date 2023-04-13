@@ -14,13 +14,13 @@
   },
   "devDependencies": {
     "@astrojs/image": "^0.16.5",
-    "@astrojs/mdx": "^0.18.3",
+    "@astrojs/mdx": "^0.18.4",
     "@astrojs/tailwind": "^3.1.1",
     "@playwright/test": "^1.29.2",
-    "astro": "^2.2.1",
+    "astro": "^2.2.3",
     "astro-icon": "^0.8.0",
     "minify": "^9.1.0",
-    "tailwindcss": "^3.2.4",
-    "sharp": "^0.32.0"
+    "sharp": "^0.32.0",
+    "tailwindcss": "^3.2.4"
   }
 }
