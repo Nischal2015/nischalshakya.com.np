@@ -13,16 +13,12 @@ module.exports = {
         '1.2rem',
         {
           lineHeight: '1.5',
-          letterSpacing: '',
-          fontWeight: '',
         },
       ],
       'body-medium': [
         '1.4rem',
         {
           lineHeight: '1.5',
-          letterSpacing: '',
-          fontWeight: '',
         },
       ],
       'body-large': [
@@ -37,24 +33,18 @@ module.exports = {
         '',
         {
           lineHeight: '1.5',
-          letterSpacing: '',
-          fontWeight: '',
         },
       ],
       'label-medium': [
         '',
         {
           lineHeight: '1.5',
-          letterSpacing: '',
-          fontWeight: '',
         },
       ],
       'label-large': [
         '',
         {
           lineHeight: '1.5',
-          letterSpacing: '',
-          fontWeight: '',
         },
       ],
       'headline-small': [
@@ -69,16 +59,12 @@ module.exports = {
         '2.4rem',
         {
           lineHeight: '1.2',
-          letterSpacing: '',
-          fontWeight: '',
         },
       ],
       'headline-large': [
         '3.2rem',
         {
           lineHeight: '1.2',
-          letterSpacing: '',
-          fontWeight: '',
         },
       ],
       'display-small': [
@@ -86,7 +72,6 @@ module.exports = {
         {
           lineHeight: '1.2',
           letterSpacing: '-0.5px',
-          fontWeight: '',
         },
       ],
       'display-medium': [
@@ -108,15 +93,12 @@ module.exports = {
         '1.4rem',
         {
           lineHeight: '1.2',
-          letterSpacing: '',
-          fontWeight: '',
         },
       ],
       'title-medium': [
         '1.6rem',
         {
           lineHeight: '1.2',
-          letterSpacing: '',
           fontWeight: '500',
         },
       ],
