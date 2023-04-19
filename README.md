@@ -41,7 +41,7 @@ To get starting with the code in this repository, follow these steps:
 1. Clone the repository to your local machine.
 
 ```bash
-git clone https://github.com/scikit-learn/scikit-learn.git
+git clone https://github.com/Nischal2015/nischalshakya.com.np.git
 ```
 
 2. Install the dependencies using `npm install`, `yarn install` or `pnpm install`.
