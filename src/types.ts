@@ -17,3 +17,30 @@ export interface MetaSeo {
   twitterCreator?: string;
   twitterCard?: 'summary' | 'summary_large_image';
 }
+
+export type Month =
+  | 'Jan'
+  | 'Feb'
+  | 'Mar'
+  | 'Apr'
+  | 'May'
+  | 'Jun'
+  | 'Jul'
+  | 'Aug'
+  | 'Sep'
+  | 'Oct'
+  | 'Nov'
+  | 'Dec';
+export interface ExperienceProps {
+  title: string;
+  company: string;
+  employeeType: string;
+  startMonth: Month;
+  startYear: string;
+  endMonth?: Month;
+  endYear: string;
+  skills: string[];
+  description?: string;
+  companyLocation?: string;
+  location?: 'On-site' | 'Hybrid' | 'Remote';
+}

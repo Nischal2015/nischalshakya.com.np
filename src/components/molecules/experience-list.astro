@@ -1,0 +1,56 @@
+---
+import type { ExperienceProps } from '../../types';
+import { calculateMonths, skillBuilder } from '../../utils';
+
+const {
+  title,
+  company,
+  // description,
+  employeeType,
+  endYear,
+  startMonth,
+  startYear,
+  companyLocation,
+  endMonth,
+  location,
+  skills,
+  index,
+} = Astro.props as ExperienceProps & { index: number };
+
+const duration = calculateMonths(startMonth, startYear, endMonth, endYear);
+const skillsList = skillBuilder(skills);
+---
+
+<li
+  class="relative after:content-[''] after:absolute after:inset-y-[0] after:left-[32px] after:-translate-x-1/2 after:w-[2px] after:opacity-20 after:bg-gray after:-z-[2]"
+>
+  <div
+    class='ms-6 text-[2rem] before:absolute before:left-[0] before:-translate-y-1 before:text-headline-medium before:flex before:items-center before:justify-center before:rounded-full before:text-white before:z-[1] numbering'
+  >
+    <h3 class='font-medium tracking-normal mb-1'>{title}</h3>
+    <div class='flex flex-col gap-[0.4rem] leading-[1.4] mb-2'>
+      <span>{company} {employeeType && `· ${employeeType}`}</span>
+      <span class='text-gray'
+        >{startMonth} {startYear} - {endMonth} {endYear} · {duration}</span
+      >
+      <span class='text-gray'
+        >{companyLocation} {location && `· ${location}`}</span
+      >
+    </div>
+    <span class='leading-[1.4]'>
+      <strong class='tracking-wider'>Skills:</strong>
+      {skillsList}
+    </span>
+  </div>
+</li>
+
+<style define:vars={{ index }}>
+  .numbering::before {
+    counter-reset: index var(--index);
+    content: counter(index);
+    height: 64px;
+    width: 64px;
+    box-shadow: 0 0 0 10px #f8f9fa, inset 0 0 0 4px #212529,
+      inset 0 0 0 8px #f8f9fa, inset 0 0 0 32px #212529;
+  }
+</style>

@@ -1,0 +1,37 @@
+---
+import ExperienceList from '../components/molecules/experience-list.astro';
+import { frontmatter } from '../content/seo/about.md';
+import PageLayout from '../layouts/page-layout.astro';
+import Section from '../layouts/section.astro';
+import { experienceList } from '../data';
+---
+
+<PageLayout meta={frontmatter}>
+  <Section>
+    <h1 class='text-center'>About</h1>
+    <h2
+      class='text-center text-display-small tracking-wide mb-5 mt-[0.4rem] text-gray'
+    >
+      Unveling My Artistic Journey
+    </h2>
+  </Section>
+
+  <Section>
+    <h2 class='text-center mb-5'>Work Experience</h2>
+    <ol class='[&>*:not(:first-of-type)]:pt-5'>
+      {
+        experienceList.map((experience, index) => (
+          <ExperienceList {...experience} index={index + 1} />
+        ))
+      }
+    </ol>
+  </Section>
+
+  <Section>
+    <h2 class='text-center'>Education</h2>
+  </Section>
+
+  <Section>
+    <h2 class='text-center'>Skills</h2>
+  </Section>
+</PageLayout>
