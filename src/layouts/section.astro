@@ -4,17 +4,20 @@ interface Props {
   class?: string;
 }
 
-const { py, class: className = '' } = Astro.props as Props;
-const paddingBlock = py ? `py-[${py}rem]` : 'py-[9.6rem]';
+const { py, class: className } = Astro.props as Props;
+const paddingBlock = py ? `${py}rem` : '9.6rem';
 ---
 
-<section class={`${paddingBlock} ${className}`}>
+<section class={`section ${className}`}>
   <div class='containers ps-[4vw] pe-[4vw] m-auto'>
     <slot />
   </div>
 </section>
 
-<style>
+<style define:vars={{ paddingBlock }}>
+  .section {
+    padding-block: var(--paddingBlock);
+  }
   .containers {
     max-width: 153.6rem;
   }
