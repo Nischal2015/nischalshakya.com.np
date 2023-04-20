@@ -1,37 +1,76 @@
 ---
-import Number from '../atoms/number.astro';
+import type { AchievementProps } from '../../types';
+import { calculateMonths, skillBuilder } from '../../utils';
 
-interface Props {
-  number: string;
-  company: string;
-  role: string;
-  color: string;
-}
+const {
+  title,
+  company,
+  // description,
+  education,
+  employeeType,
+  endYear,
+  startMonth,
+  startYear,
+  companyLocation,
+  endMonth,
+  location,
+  school,
+  skills,
+  index,
+} = Astro.props as AchievementProps & { index: number };
 
-const { number, color, company, role } = Astro.props as Props;
+const duration = calculateMonths(startMonth, startYear, endMonth, endYear);
+const skillsList = skillBuilder(skills);
 ---
 
-<div>
-  <div class="number">
-    <Number color={color}>{number}</Number>
+<li
+  class="relative after:content-[''] after:absolute after:inset-y-[0] after:left-[28px] after:-translate-x-1/2 after:w-[2px] after:opacity-20 after:bg-gray after:-z-[2]"
+>
+  <div
+    class='ms-6 text-[2rem] before:absolute before:left-[0] before:-translate-y-1 before:text-body-large before:font-medium before:flex before:items-center before:justify-center before:rounded-full before:text-white before:z-[1] numbering [&>*:last-child]:pb-2'
+  >
+    <h3 class='font-medium tracking-normal mb-1'>{title || school}</h3>
+    <div class='flex flex-col gap-[0.4rem] leading-[1.4]'>
+      {
+        company && (
+          <span>
+            {company} {employeeType && `· ${employeeType}`}
+          </span>
+        )
+      }
+      {education && <span>{education}</span>}
+      <span class='text-gray'
+        >{startMonth}
+        {startYear} - {endMonth}
+        {endYear}
+        {company && duration && `· ${duration}`}</span
+      >
+      {
+        companyLocation && (
+          <span class='text-gray'>
+            {companyLocation} {location && `· ${location}`}
+          </span>
+        )
+      }
+    </div>
+    {
+      skillsList.length !== 0 && (
+        <span class='leading-[1.4] mt-2 inline-block'>
+          <strong class='tracking-wider'>Skills:</strong>
+          {skillsList}
+        </span>
+      )
+    }
   </div>
-  <h3 class="text-title-large">
-    <span class={color}>{company}</span>, {role}
-  </h3>
-  <p class="text-body-large opacity-85">
-    <slot />
-  </p>
-</div>
+</li>
 
-<style>
-  .number, .text-title-large {
-    margin-block-end: 1.2rem;
-  }
-  h3 {
-    margin-block-end: 1.2rem;
-  }
-  p {
-    max-inline-size: max-content;
-    hyphens: auto;
+<style define:vars={{ index }}>
+  .numbering::before {
+    counter-reset: index var(--index);
+    content: counter(index);
+    height: 56px;
+    width: 56px;
+    box-shadow: 0 0 0 10px #f8f9fa, inset 0 0 0 4px #212529,
+      inset 0 0 0 8px #f8f9fa, inset 0 0 0 28px #212529;
   }
 </style>
