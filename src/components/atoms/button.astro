@@ -31,8 +31,8 @@ const Component = as || 'button';
 <Component
   {...rest}
   class:list={[
-    `px-sm ${backgroundColor} ${fontSize} border-0  rounded-[48px] py-lg border-solid border-black border-2 ${className} button-text`,
-    { 'pd-md': icon },
+    `py-2 ${backgroundColor} ${fontSize} border-0  rounded-[48px] ps-3 pe-3 border-solid border-black border-2 ${className} button-text`,
+    { 'pe-[3.2rem] ps-[3.2rem]': icon },
   ]}
 >
   <slot />
@@ -75,14 +75,5 @@ const Component = as || 'button';
   }
   .button-text:hover::before {
     transform: scaleY(1);
-  }
-  .py-lg {
-    padding-inline: 4.8rem;
-  }
-  .px-sm {
-    padding-block: 2.4rem;
-  }
-  .pd-md {
-    padding-inline: 3.2rem;
   }
 </style>
