@@ -1,9 +1,9 @@
 ---
-import ExperienceList from '../components/molecules/experience-list.astro';
+import List from '../components/molecules/list.astro';
 import { frontmatter } from '../content/seo/about.md';
 import PageLayout from '../layouts/page-layout.astro';
 import Section from '../layouts/section.astro';
-import { experienceList } from '../data';
+import { experienceList } from '../data/index';
 ---
 
 <PageLayout meta={frontmatter}>
@@ -21,17 +21,13 @@ import { experienceList } from '../data';
     <ol class='[&>*:not(:first-of-type)]:pt-5'>
       {
         experienceList.map((experience, index) => (
-          <ExperienceList {...experience} index={index + 1} />
+          <List {...experience} index={index + 1} />
         ))
       }
     </ol>
   </Section>
 
   <Section>
-    <h2 class='text-center'>Education</h2>
-  </Section>
-
-  <Section>
-    <h2 class='text-center'>Skills</h2>
+    <h2 class='text-center mb-5'>Education</h2>
   </Section>
 </PageLayout>

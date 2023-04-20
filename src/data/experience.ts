@@ -1,6 +1,6 @@
-import type { ExperienceProps } from './types';
+import type { AchievementProps } from '../types';
 
-export const experienceList: ExperienceProps[] = [
+export const experienceList: AchievementProps[] = [
   {
     title: 'DevOps Apprentice',
     company: 'CodeRush',

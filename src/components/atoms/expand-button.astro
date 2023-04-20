@@ -30,15 +30,9 @@ const number = `0${numbering}/`;
   <span>
     {
       numbering && (
-        <span class='numbering text-title-medium opacity-80'>{number}</span>
+        <span class='me-2 text-title-medium opacity-80'>{number}</span>
       )
     }
     <slot />
   </span>
 </Button>
-
-<style>
-  .numbering {
-    margin-inline-end: 2.4rem;
-  }
-</style>

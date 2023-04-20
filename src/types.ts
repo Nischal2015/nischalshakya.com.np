@@ -31,15 +31,17 @@ export type Month =
   | 'Oct'
   | 'Nov'
   | 'Dec';
-export interface ExperienceProps {
-  title: string;
-  company: string;
-  employeeType: string;
+export interface AchievementProps {
+  title?: string;
+  school?: string;
+  education?: string;
+  company?: string;
+  employeeType?: string;
   startMonth: Month;
   startYear: string;
   endMonth?: Month;
   endYear: string;
-  skills: string[];
+  skills?: string[];
   description?: string;
   companyLocation?: string;
   location?: 'On-site' | 'Hybrid' | 'Remote';

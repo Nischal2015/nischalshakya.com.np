@@ -7,8 +7,10 @@ import MobileNavbar from './mobile-navbar.astro';
 import SocialCollection from './social-collection.astro';
 ---
 
-<header class='header' id='header'>
-  <nav class='flex items-center justify-between containers mx-auto'>
+<header class='py-2' id='header'>
+  <nav
+    class='flex items-center justify-between containers ps-[4vw] pe-[4vw] mx-auto'
+  >
     <div class='flex items-center gap-5'>
       <a href='/' aria-label='Portfolio logo'>
         <Icon name='full-logo' class='w-[160px] h-auto' />
@@ -37,11 +39,7 @@ import SocialCollection from './social-collection.astro';
 </header>
 
 <style>
-  .header {
-    padding-block: 2.4rem;
-  }
   .containers {
-    padding-inline: 4vw;
     max-width: 153.6rem;
   }
   @media (min-width: 153.6rem) {
