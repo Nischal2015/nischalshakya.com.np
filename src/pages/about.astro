@@ -3,7 +3,7 @@ import List from '../components/molecules/list.astro';
 import { frontmatter } from '../content/seo/about.md';
 import PageLayout from '../layouts/page-layout.astro';
 import Section from '../layouts/section.astro';
-import { experienceList } from '../data/index';
+import { experienceList, educationList } from '../data/index';
 ---
 
 <PageLayout meta={frontmatter}>
@@ -29,5 +29,12 @@ import { experienceList } from '../data/index';
 
   <Section>
     <h2 class='text-center mb-5'>Education</h2>
+    <ol class='[&>*:not(:first-of-type)]:pt-5'>
+      {
+        educationList.map((education, index) => (
+          <List {...education} index={index + 1} />
+        ))
+      }
+    </ol>
   </Section>
 </PageLayout>
