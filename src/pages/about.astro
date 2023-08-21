@@ -8,12 +8,30 @@ import { experienceList, educationList } from '../data/index';
 
 <PageLayout meta={frontmatter}>
   <Section>
-    <h1 class='text-center'>About</h1>
+    <h1 class='text-center [word-spacing:8px]'>About Me</h1>
     <h2
       class='text-center text-display-small tracking-wide mb-5 mt-[0.4rem] text-gray'
     >
-      Unveling My Artistic Journey
+      Unveiling My Artistic Journey
     </h2>
+    <p class='about'>
+      Highly motivated aspiring <strong>DevOps Engineer</strong> with a strong foundation
+      in cloud computing and cloud essentials skills in AWS. Passionate about streamlining
+      software development processes and dedicated to enhancing productivity and
+      enabling efficient software delivery. Eager to bridge the gap between development
+      and operations, I am actively seeking opportunities to gain hands-on experience
+      in implementing DevOps methodologies, leveraging AWS services, and utilizing
+      automation tools.
+    </p>
+    <p class='about'>
+      I am eager to contribute to a team of experienced AWS professionals while
+      expanding my technical knowledge and practical abilities. My passion for
+      AWS and commitment to excellence make me a valuable addition to any team.
+      As someone who values continuous learning and growth, I am excited to
+      expand my skill set and stay current with the latest AWS technologies. My
+      desire to learn and ability to collaborate with others will enable me to
+      contribute effectively to any AWS project.
+    </p>
   </Section>
 
   <Section>
@@ -38,3 +56,16 @@ import { experienceList, educationList } from '../data/index';
     </ol>
   </Section>
 </PageLayout>
+
+<style>
+  .about {
+    font-size: 2.4rem;
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+    text-align: center;
+    margin-block-end: 4.8rem;
+  }
+  .about:not(:first-of-type) {
+    margin-block-end: 0;
+  }
+</style>
