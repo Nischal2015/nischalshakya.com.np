@@ -1,6 +1,6 @@
 ---
 import type { AchievementProps } from '../../types';
-import { calculateMonths, skillBuilder } from '../../utils';
+import { skillBuilder } from '../../utils';
 
 const {
   title,
@@ -19,7 +19,6 @@ const {
   index,
 } = Astro.props as AchievementProps & { index: number };
 
-const duration = calculateMonths(startMonth, startYear, endMonth, endYear);
 const skillsList = skillBuilder(skills);
 ---
 
@@ -39,12 +38,84 @@ const skillsList = skillBuilder(skills);
         )
       }
       {education && <span>{education}</span>}
-      <span class='text-gray'
+      <span class='text-gray' id={`duration-${index}`}
         >{startMonth}
         {startYear} - {endMonth}
-        {endYear}
-        {company && duration && `· ${duration}`}</span
+        {endYear} ·
+      </span>
+
+      <script
+        define:vars={{
+          startMonth,
+          startYear,
+          endMonth,
+          endYear,
+          company,
+          index,
+        }}
       >
+        const monthToNumber = {
+          Jan: 1,
+          Feb: 2,
+          Mar: 3,
+          Apr: 4,
+          May: 5,
+          Jun: 6,
+          Jul: 7,
+          Aug: 8,
+          Sep: 9,
+          Oct: 10,
+          Nov: 11,
+          Dec: 12,
+        };
+
+        const _resolveEndMonth = (endMonth, endYear) => {
+          if (endMonth && endYear) {
+            return +endYear * 12 + monthToNumber[endMonth];
+          }
+
+          const date = new Date();
+          const currentMonth = date.getMonth() + 1;
+          const currentYear = date.getFullYear();
+          return currentYear * 12 + currentMonth;
+        };
+
+        const monthToYearAndMonths = (value) => {
+          const year = Math.floor(value / 12);
+          const month = value % 12;
+          return { year, month };
+        };
+
+        const calculateMonths = (startMonth, startYear, endMonth, endYear) => {
+          const startMonthNumber = monthToNumber[startMonth];
+          const numberOfMonths =
+            _resolveEndMonth(endMonth, endYear) -
+            (+startYear * 12 + startMonthNumber) +
+            1;
+
+          const { year, month } = monthToYearAndMonths(numberOfMonths);
+
+          if (year === 0) {
+            return `${month} mos`;
+          } else if (year === 1) {
+            return `${year} yr ${month} mos`;
+          } else {
+            return `${year} yrs ${month} mos`;
+          }
+        };
+
+        const duration = calculateMonths(
+          startMonth,
+          startYear,
+          endMonth,
+          endYear
+        );
+        if (company && duration) {
+          const durationElement = document.getElementById(`duration-${index}`);
+          const text = document.createTextNode(duration);
+          durationElement.appendChild(text);
+        }
+      </script>
       {
         companyLocation && (
           <span class='text-gray'>
