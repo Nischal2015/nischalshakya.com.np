@@ -1,0 +1,145 @@
+---
+import { frontmatter } from '../content/seo/projects.md';
+import PageLayout from '../layouts/page-layout.astro';
+import Section from '../layouts/section.astro';
+---
+
+<PageLayout meta={frontmatter}>
+  <Section>
+    <h1 class='text-center'>Projects</h1>
+    <h2 class='text-center text-display-small tracking-wide text-gray mt-4 h2'>
+      Where Ideas Come to Life
+    </h2>
+
+    <div class='tablet'>
+      <div class='circle'></div>
+      <div class='screen'></div>
+    </div>
+    <div class='text'>
+      <span class='nothing'>NOTING!!</span>
+      <span class='empty'>Your collection list is empty.</span>
+    </div>
+  </Section>
+</PageLayout>
+
+<style>
+  .h2 {
+    margin-block-start: 0.8rem;
+    margin-block-end: 9.6rem;
+  }
+  .tablet {
+    height: 54rem;
+    width: 36rem;
+    background: #999;
+    border-radius: 8px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    position: relative;
+    margin: 0 auto;
+    filter: blur(0.75px);
+  }
+  .tablet:before,
+  .tablet:after {
+    content: '';
+    position: absolute;
+    bottom: 6rem;
+    height: 65%;
+    width: 45%;
+    background: #999;
+    clip-path: polygon(
+      12% 0,
+      100% 0,
+      100% 100%,
+      0 100%,
+      15% 33%,
+      0 13%,
+      18% 13%
+    );
+  }
+  .tablet:before {
+    transform: translateX(calc(-100% - 12px));
+  }
+  .tablet:after {
+    right: 0;
+    transform: scaleX(-1) translateX(calc(-100% + 3px));
+  }
+  .circle {
+    height: 18px;
+    width: 18px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 25px 0 0 0 #fff, 50px 0 0 0 #fff;
+    position: relative;
+  }
+  .circle:before,
+  .circle:after {
+    content: '';
+    position: absolute;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    background: #fff;
+    top: 20rem;
+    z-index: 1;
+    box-shadow: inset 0 0 0 8px #888;
+  }
+  .circle:before {
+    left: -18.5rem;
+  }
+  .circle:after {
+    left: 45.5rem;
+  }
+  .screen {
+    height: 100%;
+    width: 100%;
+    background: #fff;
+    border-radius: 2px;
+    position: relative;
+  }
+  .screen:before,
+  .screen:after {
+    content: '';
+    position: absolute;
+    background: #999;
+    height: 18px;
+    right: 0;
+    left: 0;
+    margin-inline: auto;
+  }
+  .screen:before {
+    width: 18px;
+    box-shadow: 100px 0 0 0 #999;
+    border-radius: 50%;
+    transform: translateX(-50px);
+    margin-block-start: 85px;
+  }
+  .screen:after {
+    height: 14px;
+    width: 65px;
+    border-radius: 999px;
+    margin-block-start: 140px;
+  }
+  .text {
+    display: flex;
+    flex-direction: column;
+    margin-block-start: 6.4rem;
+    gap: 2.4rem;
+    filter: blur(0.75px);
+  }
+  .nothing,
+  .empty {
+    font-weight: 500;
+    text-align: center;
+    display: block;
+    color: #777;
+    letter-spacing: 1px;
+  }
+  .nothing {
+    font-size: 7.2rem;
+  }
+  .empty {
+    font-size: 3.6rem;
+  }
+</style>
