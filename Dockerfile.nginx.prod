@@ -16,6 +16,8 @@ RUN yarn build
 # 2nd stage
 FROM nginx:1.23.3-alpine-slim
 
+COPY --from=build /app/dist /etc/nginx/html
+   
 EXPOSE 8080
 
 CMD ["nginx", "-g", "daemon off;"]
