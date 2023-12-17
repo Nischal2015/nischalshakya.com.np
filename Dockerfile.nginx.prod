@@ -14,10 +14,10 @@ COPY . .
 RUN yarn build
 
 # 2nd stage
-FROM nginx:1.23.3-alpine-slim
+FROM bitnami/nginx:1.25.3
 
-COPY --from=build /app/dist /etc/nginx/html
-   
+COPY --from=build /app/dist /opt/bitnami/nginx/html
+
 EXPOSE 8080
 
 CMD ["nginx", "-g", "daemon off;"]
