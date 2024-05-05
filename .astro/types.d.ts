@@ -112,6 +112,20 @@ declare module 'astro:content' {
 
 	const entryMap: {
 		"articles": {
+"01-creating-comprehensive-serverless-reminder-app.md": {
+  id: "01-creating-comprehensive-serverless-reminder-app.md",
+  slug: "01-creating-comprehensive-serverless-reminder-app",
+  body: string,
+  collection: "articles",
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".md"] },
+"02-serverless-file-processing.md": {
+  id: "02-serverless-file-processing.md",
+  slug: "02-serverless-file-processing",
+  body: string,
+  collection: "articles",
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".md"] },
 "creating-an-ec2-instance.md": {
   id: "creating-an-ec2-instance.md",
   slug: "creating-an-ec2-instance",
