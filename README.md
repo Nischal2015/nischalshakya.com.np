@@ -8,7 +8,7 @@
 
 ## Description
 
-This repository contains the code for my personal portfolio website, which is hosted on **Vercel** and built using **Astro** for the UI and **Tailwind CSS** for styling. The website serves as a showcase of my skills, projects, articles and experience as a software developer.
+This repository contains the code for my personal portfolio website, which is hosted on **Vercel** and built using **Astro** for the UI and **Tailwind CSS** for styling. The website showcases my skills, projects, articles and experience as a software developer.
 
 ![Portfolio Home Page](https://res.cloudinary.com/dt7uxtenl/image/upload/v1681319319/frontpage_jmdvtk.png)
 
