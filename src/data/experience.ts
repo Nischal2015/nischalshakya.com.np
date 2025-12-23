@@ -2,12 +2,25 @@ import type { AchievementProps } from '../types';
 
 export const experienceList: AchievementProps[] = [
   {
+    title: 'Software Engineer',
+    company: 'Qsystems AI',
+    employeeType: 'Full-time',
+    startMonth: 'May',
+    startYear: '2025',
+    endYear: 'Present',
+    companyLocation: 'Chicago, Illionis, United States',
+    location: 'Remote',
+    skills: ['Agentic AI', 'DevOps', 'Amazon Web Services (AWS)', 'Team Coordination', 'Cross-team Collaboration'],
+    description: '',
+  },
+  {
     title: 'Associate DevOps Engineer',
     company: 'Genese Solution',
     employeeType: 'Full-time',
     startMonth: 'Jul',
     startYear: '2023',
-    endYear: 'Present',
+    endMonth: 'May',
+    endYear: '2025',
     companyLocation: 'Bakhundole, Lalitpur',
     location: 'On-site',
     skills: ['Amazon Web Services (AWS)'],
