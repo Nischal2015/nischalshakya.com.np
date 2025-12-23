@@ -8,7 +8,7 @@ export const experienceList: AchievementProps[] = [
     startMonth: 'May',
     startYear: '2025',
     endYear: 'Present',
-    companyLocation: 'Chicago, Illionis, United States',
+    companyLocation: 'Chicago, Illinois, United States',
     location: 'Remote',
     skills: ['Agentic AI', 'DevOps', 'Amazon Web Services (AWS)', 'Team Coordination', 'Cross-team Collaboration'],
     description: '',
